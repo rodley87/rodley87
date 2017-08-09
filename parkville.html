@@ -13,7 +13,7 @@
 <title>Parkville : Insidersguide</title>
 <!--
 This website is managed centrally by the External Relations Digital Team. digital-team@unimelb.edu.au
-Last updated by: Rodney Bartlett on 01 Aug 2017 12:19pm
+Last updated by: Rodney Bartlett on 09 Aug 2017 3:02pm
 Last published by: Never Published on 01 Jan 1970 10:00am
 Asset ID: 2426853
 Asset Type: Standard Page
@@ -38,7 +38,7 @@ Web maintainer: matrix-cms@unimelbit.zendesk.com
 
 
 <meta name="DC.Creater" content="Rodney Bartlett"/>
-<meta name="DC.Date" content="01 Aug 2017 12:19pm"/>
+<meta name="DC.Date" content="09 Aug 2017 3:02pm"/>
 <meta name="MCE.Template" content="Header with image (light)"/>
 <meta name="MCE.Paintlayout" content="Page layout 1385754"/>
 
@@ -86,7 +86,7 @@ Web maintainer: matrix-cms@unimelbit.zendesk.com
   Running Squiz Matrix
   Developed by Squiz - http://www.squiz.net
   Squiz, Squiz Matrix, MySource, MySource Matrix and Squiz.net are registered Trademarks of Squiz Pty Ltd
-  Page generated: 01 August 2017 22:05:47
+  Page generated: 09 August 2017 16:00:55
 -->
 
 
@@ -235,7 +235,13 @@ Web maintainer: matrix-cms@unimelbit.zendesk.com
   <script src="//api.mapbox.com/mapbox.js/plugins/leaflet-locatecontrol/v0.43.0/L.Control.Locate.min.js"></script>
   <link href="//api.mapbox.com/mapbox.js/plugins/leaflet-locatecontrol/v0.43.0/L.Control.Locate.mapbox.css" rel="stylesheet">
   <!--[if lt IE 9]><link href='//api.mapbox.com/mapbox.js/plugins/leaflet-locatecontrol/v0.43.0/L.Control.Locate.ie.css' rel='stylesheet' /><![endif]-->
-  <link href="//api.mapbox.com/mapbox.js/plugins/leaflet-locatecontrol/v0.43.0/css/font-awesome.min.css" rel="stylesheet"><script type="text/javascript">L.mapbox.accessToken = 'pk.eyJ1IjoibWFwcy11bmltZWxiIiwiYSI6ImNpZmkxajZyNGJtYWJzeWx4ZjRwbmdvMzAifQ.CahREikX9S7i791MIkHrAQ';
+  <link href="//api.mapbox.com/mapbox.js/plugins/leaflet-locatecontrol/v0.43.0/css/font-awesome.min.css" rel="stylesheet"><script type="text/javascript">
+
+L.mapbox.accessToken = 'pk.eyJ1IjoibWFwcy11bmltZWxiIiwiYSI6ImNpZmkxajZyNGJtYWJzeWx4ZjRwbmdvMzAifQ.CahREikX9S7i791MIkHrAQ';
+
+var map = L.mapbox.map('map', 'mapbox.light')
+  .setView([-37.7989,144.962], 17);
+var myLayer = L.mapbox.featureLayer().addTo(map);
 
 var geojson = [{
                 "type": "Feature",
@@ -244,101 +250,138 @@ var geojson = [{
                     "coordinates": [144.9608744, -37.7981057]
                 },
                 "properties": {
-                    "marker-color": "#ffcc33",
-                    "marker-size": "large",
-                    "marker-symbol": "star",
                     "title": "Clock tower/Old Quad",
-                    "description": "<img src=\"https://resources.web.unimelb.edu.au/__data/assets/image/0008/1935206/varieties/thumb.jpg\" alt=\"Old Quad photo\"><a href=\"https://cms.unimelb.edu.au/controlled-environment/insidersguide/parkville/old-quad\">Audio guide</a><br /><a href=\"https://www.google.com.au/maps/dir//-37.7981057,144.9608744\">Directions (Google)</a>"
+                    "description": "<img src=\"https://resources.web.unimelb.edu.au/__data/assets/image/0008/1935206/varieties/thumb.jpg\" alt=\"Old Quad photo\"><a href=\"https://cms.unimelb.edu.au/controlled-environment/insidersguide/parkville/old-quad\">Audio guide</a><br /><a href=\"https://www.google.com.au/maps/dir//-37.7981057,144.9608744\">Directions (Google)</a>",
+                          icon: {
+        iconUrl: 'assets/images/marker.png',
+        iconSize: [48, 48],
+        iconAnchor: [0, 0],
+        popupAnchor: [0, 0],
+        className: ''
+      }
                 }
-            },{
+            },
+            {
                 "type": "Feature",
                 "geometry": {
                     "type": "Point",
-                    "coordinates": [144.9603, -37.7988] 
+                    "coordinates": [144.9603, -37.7988]
                 },
                 "properties": {
-                    "marker-color": "#ffcc33",
-                    "marker-size": "large",
-                    "marker-symbol": "star",
                     "title": "South Lawn",
-                    "description": "<img src=\"https://resources.web.unimelb.edu.au/__data/assets/image/0009/1935207/varieties/thumb.jpg\" alt=\"South Lawn\"><a href=\"https://cms.unimelb.edu.au/controlled-environment/insidersguide/parkville/south-lawn\">Audio guide</a><br /><a href=\"https://www.google.com.au/maps/dir//-37.7988,144.9603\">Directions (Google)</a>"
+                    "description": "<img src=\"https://resources.web.unimelb.edu.au/__data/assets/image/0009/1935207/varieties/thumb.jpg\" alt=\"South Lawn\"><a href=\"https://cms.unimelb.edu.au/controlled-environment/insidersguide/parkville/south-lawn\">Audio guide</a><br /><a href=\"https://www.google.com.au/maps/dir//-37.7988,144.9603\">Directions (Google)</a>",
+                          icon: {
+        iconUrl: 'assets/images/marker.png',
+        iconSize: [48, 48],
+        iconAnchor: [0, 0],
+        popupAnchor: [0, 0],
+        className: ''
+      }
                 }
-            },{
+            },
+            {
                 "type": "Feature",
                 "geometry": {
                     "type": "Point",
                     "coordinates": [144.96028, -37.80103]
                 },
                 "properties": {
-                    "marker-color": "#ffcc33",
-                    "marker-size": "large",
-                    "marker-symbol": "star",
                     "title": "University Square",
-                    "description": "<img src=\"https://resources.web.unimelb.edu.au/__data/assets/image/0010/1935208/varieties/thumb.jpg\" alt=\"University Square photo\"><a href=\"https://cms.unimelb.edu.au/controlled-environment/insidersguide/parkville/university-square\">Audio guide</a><br /><a href=\"https://www.google.com.au/maps/dir//-37.80103,144.96028\">Directions (Google)</a>"
-                }
-            },{
+                    "description": "<img src=\"https://resources.web.unimelb.edu.au/__data/assets/image/0010/1935208/varieties/thumb.jpg\" alt=\"University Square photo\"><a href=\"https://cms.unimelb.edu.au/controlled-environment/insidersguide/parkville/university-square\">Audio guide</a><br /><a href=\"https://www.google.com.au/maps/dir//-37.80103,144.96028\">Directions (Google)</a>",
+                      icon: {
+        iconUrl: '/assets/images/marker.png',
+        iconSize: [48, 48],
+        iconAnchor: [0, 0],
+        popupAnchor: [0, 0],
+        className: ''
+      }
+      }
+            },
+            {
                 "type": "Feature",
                 "geometry": {
                     "type": "Point",
                     "coordinates": [144.961015, -37.796925]
                 },
                 "properties": {
-                    "marker-color": "#ffcc33",
-                    "marker-size": "large",
-                    "marker-symbol": "star",
                     "title": "Union Building",
-                    "description": "<img src=\"https://resources.web.unimelb.edu.au/__data/assets/image/0003/1935210/varieties/thumb.jpg\" alt=\"Union Building photo\"><a href=\"https://cms.unimelb.edu.au/controlled-environment/insidersguide/parkville/union-building\">Audio guide</a><br /><a href=\"https://www.google.com.au/maps/dir//-37.796925,144.961015\">Directions (Google)</a>"
+                    "description": "<img src=\"https://resources.web.unimelb.edu.au/__data/assets/image/0003/1935210/varieties/thumb.jpg\" alt=\"Union Building photo\"><a href=\"https://cms.unimelb.edu.au/controlled-environment/insidersguide/parkville/union-building\">Audio guide</a><br /><a href=\"https://www.google.com.au/maps/dir//-37.796925,144.961015\">Directions (Google)</a>",
+                          icon: {
+        iconUrl: 'assets/images/marker.png',
+        iconSize: [48, 48],
+        iconAnchor: [0, 0],
+        popupAnchor: [0, 0],
+        className: ''
+      }
                 }
-            },{
+            },
+            {
                 "type": "Feature",
                 "geometry": {
                     "type": "Point",
                     "coordinates": [144.961317, -37.798221]
                 },
                 "properties": {
-                    "marker-color": "#ffcc33",
-                    "marker-size": "large",
-                    "marker-symbol": "star",
                     "title": "Wilson Hall",
-                    "description": "<img src=\"https://resources.web.unimelb.edu.au/__data/assets/image/0005/1935212/varieties/thumb.jpg\" alt=\"Wilson Hall photo\"><a href=\"https://cms.unimelb.edu.au/controlled-environment/insidersguide/parkville/wilson-hall\">Audio guide</a><br /><a href=\"https://www.google.com.au/maps/dir//-37.798221,144.961317\">Directions (Google)</a>"
+                    "description": "<img src=\"https://resources.web.unimelb.edu.au/__data/assets/image/0005/1935212/varieties/thumb.jpg\" alt=\"Wilson Hall photo\"><a href=\"https://cms.unimelb.edu.au/controlled-environment/insidersguide/parkville/wilson-hall\">Audio guide</a><br /><a href=\"https://www.google.com.au/maps/dir//-37.798221,144.961317\">Directions (Google)</a>",
+                          icon: {
+        iconUrl: 'assets/images/marker.png',
+        iconSize: [48, 48],
+        iconAnchor: [0, 0],
+        popupAnchor: [0, 0],
+        className: ''
+      }
                 }
-            },{
+            },
+            {
                 "type": "Feature",
                 "geometry": {
                     "type": "Point",
                     "coordinates": [144.959487, -37.798429]
                 },
                 "properties": {
-                    "marker-color": "#ffcc33",
-                    "marker-size": "large",
-                    "marker-symbol": "star",
                     "title": "Baillieu Library",
-                    "description": "<img src=\"https://resources.web.unimelb.edu.au/__data/assets/image/0011/1935209/varieties/thumb.jpg\" alt=\"Baillieu Library photo\"><a href=\"https://cms.unimelb.edu.au/controlled-environment/insidersguide/parkville/baillieu-library\">Audio guide</a><br /><a href=\"https://www.google.com.au/maps/dir//-37.798429,144.959487\">Directions (Google)</a>"
+                    "description": "<img src=\"https://resources.web.unimelb.edu.au/__data/assets/image/0011/1935209/varieties/thumb.jpg\" alt=\"Baillieu Library photo\"><a href=\"https://cms.unimelb.edu.au/controlled-environment/insidersguide/parkville/baillieu-library\">Audio guide</a><br /><a href=\"https://www.google.com.au/maps/dir//-37.798429,144.959487\">Directions (Google)</a>",
+                          icon: {
+        iconUrl: 'assets/images/marker.png',
+        iconSize: [48, 48],
+        iconAnchor: [0, 0],
+        popupAnchor: [0, 0],
+        className: ''
+      }
                 }
-            },{
+            },
+            {
                 "type": "Feature",
                 "geometry": {
                     "type": "Point",
                     "coordinates": [144.962872, -37.797302]
                 },
                 "properties": {
-                    "marker-color": "#ffcc33",
-                    "marker-size": "large",
-                    "marker-symbol": "star",
                     "title": "Melbourne School of Design",
-                    "description": "<img src=\"https://resources.web.unimelb.edu.au/__data/assets/image/0004/1935211/varieties/thumb.jpg\" alt=\"Melbourne School of Design photo\"><a href=\"https://cms.unimelb.edu.au/controlled-environment/insidersguide/parkville/melbourne-school-of-design\">Audio guide</a><br /><a href=\"https://www.google.com.au/maps/dir//-37.797302,144.962872\">Directions (Google)</a>"
+                    "description": "<img src=\"https://resources.web.unimelb.edu.au/__data/assets/image/0004/1935211/varieties/thumb.jpg\" alt=\"Melbourne School of Design photo\"><a href=\"https://cms.unimelb.edu.au/controlled-environment/insidersguide/parkville/melbourne-school-of-design\">Audio guide</a><br /><a href=\"https://www.google.com.au/maps/dir//-37.797302,144.962872\">Directions (Google)</a>",
+                          icon: {
+        iconUrl: 'assets/images/marker.png',
+        iconSize: [48, 48],
+        iconAnchor: [0, 0],
+        popupAnchor: [0, 0],
+        className: ''
+      }
                 }
             }];
 
-var map = L.mapbox.map('map')
-    .setView([-37.7989,144.962], 16);
-map.featureLayer.setGeoJSON(geojson);
+myLayer.on('layeradd', function(e) {
+  var marker = e.layer,
+    feature = marker.feature;
+  marker.setIcon(L.icon(feature.properties.icon));
+});
+myLayer.setGeoJSON(geojson);
 map.scrollWheelZoom.disable();
 
-L.mapbox.styleLayer('mapbox://styles/mapbox/streets-v8').addTo(map);
+L.mapbox.styleLayer('mapbox://styles/mapbox/streets-v10').addTo(map);
 
 L.control.locate({
-    drawMarker: true, // marker not showing
+    drawMarker: true,
     keepCurrentZoomLevel: true
     }).addTo(map);
 
@@ -350,7 +393,8 @@ function pop(k) {
             marker.openPopup();
         }
     });
-}</script>
+}
+</script>
     
 
 
