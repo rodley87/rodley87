@@ -13,7 +13,7 @@
 <title>Southbank : Insidersguide</title>
 <!--
 This website is managed centrally by the External Relations Digital Team. digital-team@unimelb.edu.au
-Last updated by: Rodney Bartlett on 31 Jul 2017 2:48pm
+Last updated by: Rodney Bartlett on 09 Aug 2017 2:52pm
 Last published by: Never Published on 01 Jan 1970 10:00am
 Asset ID: 2428220
 Asset Type: Standard Page
@@ -38,7 +38,7 @@ Web maintainer: matrix-cms@unimelbit.zendesk.com
 
 
 <meta name="DC.Creater" content="Rodney Bartlett"/>
-<meta name="DC.Date" content="31 Jul 2017 2:48pm"/>
+<meta name="DC.Date" content="09 Aug 2017 2:52pm"/>
 <meta name="MCE.Template" content="Header with image (light)"/>
 <meta name="MCE.Paintlayout" content="Page layout 1385754"/>
 
@@ -86,7 +86,7 @@ Web maintainer: matrix-cms@unimelbit.zendesk.com
   Running Squiz Matrix
   Developed by Squiz - http://www.squiz.net
   Squiz, Squiz Matrix, MySource, MySource Matrix and Squiz.net are registered Trademarks of Squiz Pty Ltd
-  Page generated: 01 August 2017 22:06:33
+  Page generated: 09 August 2017 15:37:28
 -->
 
 
@@ -97,21 +97,9 @@ Web maintainer: matrix-cms@unimelbit.zendesk.com
         
                  <ol class="page-local-history" itemscope="" itemtype="http://schema.org/BreadcrumbList">
           <li class="root" itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">
-            <a href="index.html" title="Home" itemprop="item"><span itemprop="name">Insidersguide</span></a>
+            <a href="https://cms.unimelb.edu.au/controlled-environment/insidersguide" title="Home" itemprop="item"><span itemprop="name">Insidersguide</span></a>
             <meta content="1" itemprop="position" />
           </li>
-         
-         
-         
-         
-         
-         
-         
-         
-                     <li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">
-               <a href="southbank.html" itemprop="item" title="Southbank"><span itemprop="name">Southbank</span></a>
-               <meta content="" itemprop="position" />
-            </li>
                  </ol>
                 
         
@@ -163,33 +151,48 @@ Web maintainer: matrix-cms@unimelbit.zendesk.com
   <script src="//api.mapbox.com/mapbox.js/plugins/leaflet-locatecontrol/v0.43.0/L.Control.Locate.min.js"></script>
   <link href="//api.mapbox.com/mapbox.js/plugins/leaflet-locatecontrol/v0.43.0/L.Control.Locate.mapbox.css" rel="stylesheet">
   <!--[if lt IE 9]><link href='//api.mapbox.com/mapbox.js/plugins/leaflet-locatecontrol/v0.43.0/L.Control.Locate.ie.css' rel='stylesheet' /><![endif]-->
-  <link href="//api.mapbox.com/mapbox.js/plugins/leaflet-locatecontrol/v0.43.0/css/font-awesome.min.css" rel="stylesheet"><script type="text/javascript">L.mapbox.accessToken = 'pk.eyJ1IjoibWFwcy11bmltZWxiIiwiYSI6ImNpZmkxajZyNGJtYWJzeWx4ZjRwbmdvMzAifQ.CahREikX9S7i791MIkHrAQ';
+  <link href="//api.mapbox.com/mapbox.js/plugins/leaflet-locatecontrol/v0.43.0/css/font-awesome.min.css" rel="stylesheet"><script type="text/javascript">
 
-var geojson = [{
-                "type": "Feature",
-                "geometry": {
-                    "type": "Point",
-                    "coordinates": [144.9680249, -37.8247482]
-                },
-                "properties": {
-                    "marker-color": "#ffcc33",
-                    "marker-size": "large",
-                    "marker-symbol": "star",
-                    "title": "Wilin Garden",
-                    "alt": "Wilin Garden",
-                    "description": "<img src=\"https://resources.web.unimelb.edu.au/__data/assets/image/0008/1935206/varieties/thumb.jpg\" alt=\"Wilin Garden photo\"><a href=\"https://cms.unimelb.edu.au/controlled-environment/insidersguide/southbank/wilin-garden\">Audio guide</a><br /><a href=\"https://www.google.com.au/maps/dir//-37.8247482,144.9680249\">Directions (Google)</a>"
-                }
-            }];
+L.mapbox.accessToken = 'pk.eyJ1IjoibWFwcy11bmltZWxiIiwiYSI6ImNpZmkxajZyNGJtYWJzeWx4ZjRwbmdvMzAifQ.CahREikX9S7i791MIkHrAQ';
 
-var map = L.mapbox.map('map')
-    .setView([-37.8247482,144.9680249], 17);
-map.featureLayer.setGeoJSON(geojson);
+var map = L.mapbox.map('map', 'mapbox.light')
+  .setView([-37.8247482,144.9680249], 17);
+var myLayer = L.mapbox.featureLayer().addTo(map);
+
+var geojson = [
+  {
+    type: 'Feature',
+    geometry: {
+      type: 'Point',
+      coordinates: [144.9680249, -37.8247482]
+    },
+    properties: {
+    	            "title": "Wilin Garden",
+    	            "alt": "Wilin Garden",
+    	            "description": "<img src=\"https://resources.web.unimelb.edu.au/__data/assets/image/0008/1935206/varieties/thumb.jpg\" alt=\"Wilin Garden photo\"><a href=\"https://cms.unimelb.edu.au/controlled-environment/insidersguide/southbank/wilin-garden\">Audio guide</a><br /><a href=\"https://www.google.com.au/maps/dir//-37.8247482,144.9680249\">Directions (Google)</a>",
+      icon: {
+        iconUrl: 'assets/images/marker.png',
+        iconSize: [48, 48],
+        iconAnchor: [0, 0],
+        popupAnchor: [0, 0],
+        className: ''
+      }
+    }
+  },
+];
+
+myLayer.on('layeradd', function(e) {
+  var marker = e.layer,
+    feature = marker.feature;
+  marker.setIcon(L.icon(feature.properties.icon));
+});
+myLayer.setGeoJSON(geojson);
 map.scrollWheelZoom.disable();
 
-L.mapbox.styleLayer('mapbox://styles/mapbox/streets-v9').addTo(map);
+L.mapbox.styleLayer('mapbox://styles/mapbox/streets-v10').addTo(map);
 
 L.control.locate({
-    drawMarker: true, // marker not showing
+    drawMarker: true,
     keepCurrentZoomLevel: true
     }).addTo(map);
 
@@ -201,7 +204,8 @@ function pop(k) {
             marker.openPopup();
         }
     });
-}</script>
+}
+</script>
     
 
 
